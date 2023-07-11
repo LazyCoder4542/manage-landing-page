@@ -1,0 +1,22 @@
+{
+  "name": "manage-landing-page",
+  "version": "1.0.0",
+  "description": "A project to manage and plan day-to-day tasks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LazyCoder4542/manage-landing-page.git"
+  },
+  "author": "Adeola Fadare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LazyCoder4542/manage-landing-page/issues"
+  },
+  "homepage": "https://github.com/LazyCoder4542/manage-landing-page#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}

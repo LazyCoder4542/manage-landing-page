@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    :root {
+        --page-padding: 4rem;
+    }
+    span:has(svg) {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: contain;
+    }
+    p {
+        @apply text-gray text-[1.2rem] leading-[2rem]
+    }
+    h1, h2, h3, h4, h5, h6 {
+        @apply text-blue font-bold 
+    }
+    h1 {
+        @apply text-[3.6rem] leading-[1.2] tracking-tight
+    }
+    h2 {
+        @apply text-[2.625rem] leading-[3.25rem] -tracking-[0.0625rem]
+    }
+    h3 {
+        @apply text-[1.25rem] leading-[1.625rem] -tracking-[0.0625rem]
+    }
+    header:not(#site-header) {
+        @apply flex flex-col max-w-lg gap-4
+    }
+    header:not(#site-header) > p {
+        @apply max-w-[75%]
+    }
+}
+@layer components {
+    .btn {
+        @apply inline-flex px-8 py-2.5 rounded-full font-bold
+    }
+    .btn.btn-primary {
+        @apply bg-red-bright text-red-pale shadow-[0_0.75em_0.5em_-0.37em_rgba(242,95,58,0.5)]
+    }
+    .btn.btn-secondary {
+        @apply bg-gray-light text-red-bright
+    }
+    .counter {
+        @apply [counter-reset:list] flex flex-col gap-12
+    }
+    .counter > li {
+        @apply flex flex-col gap-4
+    }
+    .counter > li > *{
+        @apply flex items-center gap-4 before:content-[""] before:min-w-[4.5rem]
+    }
+    .counter > li > h3{
+        @apply [counter-increment:list] before:[content:"0"counter(list)] before:bg-red-bright before:py-2.5 before:inline-flex before:justify-center before:rounded-full before:font-bold before:text-gray-light
+    }
+    .card {
+        @apply flex flex-col items-center text-center gap-6 p-4 bg-gray-light pt-0
+    }
+    .card > span:nth-child(1){
+        @apply flex items-end h-[2.656rem] aspect-[2/1] mb-4
+    }
+    .card > span:nth-child(1) > img{
+        @apply  w-full aspect-square
+    }
+    .bg-tablet {
+        position: absolute;
+        background-image: url(./images/bg-tablet-pattern.svg);
+        background-repeat: no-repeat;
+        color: theme(colors.red-bright);
+    }
+    .bg-desktop {
+        position: absolute;
+        background-image: url(./images/bg-simplify-section-desktop.svg);
+        background-repeat: no-repeat;
+        color: theme(colors.red-bright);
+    }
+}
