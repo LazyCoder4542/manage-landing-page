@@ -21,3 +21,14 @@ const swiper = new Swiper('.swiper', {
         },
       }
 });
+const hamburger = document.querySelector('.hamburger')
+hamburger.addEventListener('click', ()=> {
+    if (hamburger.classList.contains('close')) {
+        hamburger.classList.replace('close', 'open')
+        hamburger.parentElement.querySelector('ul').classList.replace('max-md:hidden', 'max-md:flex')
+    }
+    else  {
+        hamburger.classList.replace('open', 'close')
+        hamburger.parentElement.querySelector('ul').classList.replace('max-md:flex', 'max-md:hidden')
+    }
+})

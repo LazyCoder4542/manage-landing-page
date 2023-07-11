@@ -522,6 +522,14 @@ header:not(#site-header) > p {
   }
 }
 
+.hamburger.close > svg:nth-child(1), .hamburger.open > svg:nth-child(2) {
+  display: block;
+}
+
+.hamburger.open > svg:nth-child(1), .hamburger.close > svg:nth-child(2) {
+  display: none;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -776,6 +784,13 @@ header:not(#site-header) > p {
   color: #f25f3a;
 }
 
+.bg-mobile {
+  position: absolute;
+  background-image: url(./images/bg-simplify-section-mobile.svg);
+  background-repeat: no-repeat;
+  color: #f25f3a;
+}
+
 .relative {
   position: relative;
 }
@@ -814,10 +829,6 @@ header:not(#site-header) > p {
 
 .row-span-2 {
   grid-row: span 2 / span 2;
-}
-
-.row-start-1 {
-  grid-row-start: 1;
 }
 
 .mt-4 {
@@ -884,10 +895,6 @@ header:not(#site-header) > p {
   width: 100%;
 }
 
-.max-w-\[80vw\] {
-  max-width: 80vw;
-}
-
 .max-w-\[60vw\] {
   max-width: 60vw;
 }
@@ -948,10 +955,6 @@ header:not(#site-header) > p {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-items-center {
-  justify-items: center;
 }
 
 .gap-2 {
@@ -1024,6 +1027,10 @@ header:not(#site-header) > p {
 
 .bg-\[length\:235\%\] {
   background-size: 235%;
+}
+
+.bg-contain {
+  background-size: contain;
 }
 
 .bg-left-bottom {
@@ -1109,22 +1116,48 @@ header:not(#site-header) > p {
   color: rgb(250 250 250 / var(--tw-text-opacity));
 }
 
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
 @media not all and (min-width: 768px) {
+  .max-md\:absolute {
+    position: absolute;
+  }
+
+  .max-md\:-top-\[30rem\] {
+    top: -30rem;
+  }
+
+  .max-md\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .max-md\:left-auto {
+    left: auto;
+  }
+
+  .max-md\:right-0 {
+    right: 0px;
+  }
+
+  .max-md\:right-1\/2 {
+    right: 50%;
+  }
+
   .max-md\:order-1 {
     order: 1;
   }
 
   .max-md\:order-2 {
     order: 2;
-  }
-
-  .max-md\:order-5 {
-    order: 5;
   }
 
   .max-md\:order-3 {
@@ -1143,8 +1176,12 @@ header:not(#site-header) > p {
     grid-row-start: 1;
   }
 
-  .max-md\:-mr-8 {
-    margin-right: -2rem;
+  .max-md\:block {
+    display: block;
+  }
+
+  .max-md\:flex {
+    display: flex;
   }
 
   .max-md\:hidden {
@@ -1155,8 +1192,30 @@ header:not(#site-header) > p {
     height: auto;
   }
 
+  .max-md\:w-1\/2 {
+    width: 50%;
+  }
+
+  .max-md\:w-3\/4 {
+    width: 75%;
+  }
+
+  .max-md\:w-\[95\%\] {
+    width: 95%;
+  }
+
   .max-md\:origin-bottom {
     transform-origin: bottom;
+  }
+
+  .max-md\:translate-x-1\/2 {
+    --tw-translate-x: 50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .max-md\:translate-y-full {
+    --tw-translate-y: 100%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .max-md\:grid-flow-row {
@@ -1191,35 +1250,44 @@ header:not(#site-header) > p {
     justify-items: center;
   }
 
-  .max-md\:gap-8 {
-    gap: 2rem;
-  }
-
-  .max-md\:gap-4 {
-    gap: 1rem;
+  .max-md\:gap-12 {
+    gap: 3rem;
   }
 
   .max-md\:gap-16 {
     gap: 4rem;
   }
 
-  .max-md\:gap-12 {
-    gap: 3rem;
+  .max-md\:rounded-2xl {
+    border-radius: 1rem;
   }
 
-  .max-md\:rounded-l-full {
-    border-top-left-radius: 9999px;
-    border-bottom-left-radius: 9999px;
-  }
-
-  .max-md\:bg-red-pale {
+  .max-md\:bg-\[white\] {
     --tw-bg-opacity: 1;
-    background-color: rgb(255 239 235 / var(--tw-bg-opacity));
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
+  .max-md\:bg-left-bottom {
+    background-position: left bottom;
+  }
+
+  .max-md\:p-12 {
+    padding: 3rem;
   }
 
   .max-md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .max-md\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .max-md\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .max-md\:py-8 {
@@ -1229,5 +1297,10 @@ header:not(#site-header) > p {
 
   .max-md\:text-center {
     text-align: center;
+  }
+
+  .max-md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }

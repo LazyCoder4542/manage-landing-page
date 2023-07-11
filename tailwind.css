@@ -39,6 +39,12 @@
     header:not(#site-header) > p {
         @apply max-w-[75%] max-md:max-w-none 
     }
+    .hamburger.close > svg:nth-child(1), .hamburger.open > svg:nth-child(2) {
+        @apply block
+    }
+    .hamburger.open > svg:nth-child(1), .hamburger.close > svg:nth-child(2) {
+        @apply hidden
+    }
 }
 @layer components {
     .btn {
@@ -83,6 +89,12 @@
     .bg-desktop {
         position: absolute;
         background-image: url(./images/bg-simplify-section-desktop.svg);
+        background-repeat: no-repeat;
+        color: theme(colors.red-bright);
+    }
+    .bg-mobile {
+        position: absolute;
+        background-image: url(./images/bg-simplify-section-mobile.svg);
         background-repeat: no-repeat;
         color: theme(colors.red-bright);
     }

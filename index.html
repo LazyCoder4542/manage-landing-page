@@ -50,8 +50,12 @@
           </g>
         </svg>
       </div>
-      <nav class="max-md:hidden">
-        <ul class="flex gap-6 text-sm font-medium">
+      <nav>
+        <div class="hamburger hidden max-md:block close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18"><g fill="#242D52" fill-rule="evenodd"><path d="M0 0h25v4H0zM0 7h25v4H0zM0 14h25v4H0z"/></g></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22"><path fill="#242D52" fill-rule="evenodd" d="M17.925.747l2.828 2.828L13.328 11l7.425 7.425-2.828 2.828-7.425-7.425-7.425 7.425-2.828-2.828L7.671 11 .247 3.575 3.075.747 10.5 8.171 17.925.747z"/></svg>
+        </div>
+        <ul class="flex gap-6 text-sm font-medium max-md:hidden max-md:absolute max-md:bottom-0 max-md:right-1/2 max-md:translate-y-full max-md:translate-x-1/2 max-md:flex-col max-md:bg-[white] shadow-2xl max-md:p-12 max-md:text-center max-md:w-3/4 max-md:rounded-2xl">
           <li>Pricing</li>
           <li>Product</li>
           <li>About Us</li>
@@ -59,11 +63,11 @@
           <li>Community</li>
         </ul>
       </nav>
-      <div class="buttons">
+      <div class="buttons max-md:hidden">
         <div class="btn btn-primary" role="button">Get Started</div>
       </div>
       <div
-        class="bg-tablet right-0 top-0 w-[43%] bg-[length:120%] aspect-square -z-10 bg-left-bottom"
+        class="bg-tablet right-0 top-0 w-[43%] bg-[length:120%] aspect-square -z-10 bg-left-bottom max-md:w-[95%]"
       ></div>
     </header>
     <main>
@@ -128,7 +132,7 @@
             </div>
           </div>
           <div
-            class="bg-tablet left-0 top-8 w-[22%] bg-[length:235%] aspect-[1/2] -z-10 bg-right-top"
+            class="bg-tablet left-0 top-8 w-[22%] bg-[length:235%] aspect-[1/2] -z-10 bg-right-top max-md:right-0 max-md:left-auto max-md:bg-left-bottom max-md:-top-[30rem] max-md:w-1/2"
           ></div>
         </section>
         <section id="testimonials">
@@ -209,7 +213,7 @@
         <section>
           <div class="bg-red-bright relative">
             <div
-              class="px-24 py-14 gap-4 max-md:px-8 flex items-center justify-between z-10 relative max-md:flex-col"
+              class="px-24 py-14 gap-4 max-md:px-8 max-md:py-20 flex items-center justify-between z-10 relative max-md:flex-col"
             >
               <header>
                 <h2 class="text-gray-light">
@@ -219,14 +223,17 @@
               <div class="btn btn-secondary">Get Started</div>
             </div>
             <div
-              class="bg-desktop right-0 top-0 h-full w-[85%] bg-[length:120%] bg- z-[0] bg-left-bottom"
+              class="bg-desktop right-0 top-0 h-full w-[85%] bg-[length:120%] bg- z-[0] bg-left-bottom max-md:hidden"
+            ></div>
+            <div
+              class="hidden bg-mobile left-0 top-0 h-full w-full bg-contain bg- z-[0] bg-left-bottom max-md:block"
             ></div>
           </div>
         </section>
       </div>
     </main>
     <footer id="site-footer">
-      <div class="px-24 py-24 max-md:px-8 bg-blue-dark grid grid-cols-3 h-[24rem] max-md:grid-cols-1 max-md:h-auto max-md:gap-12 overflow-hidden">
+      <div class="px-24 py-24 max-md:px-8 max-md:py-16 bg-blue-dark grid grid-cols-3 h-[24rem] max-md:grid-cols-1 max-md:h-auto max-md:gap-12 overflow-hidden">
         <div
           class="grid col-span-2 row-span-2 grid-rows-2 grid-flow-col gap-4 h-full max-md:row-auto max-md:col-auto max-md:grid-rows-1 max-md:h-auto max-md:grid-flow-row max-md:justify-items-center max-md:gap-16"
         >
@@ -297,7 +304,7 @@
           </div>
           <div class="row-span-2 h-full max-md:h-auto max-md:row-auto max-md:order-1">
             <ul
-              class="text-gray-light grid grid-flow-col grid-rows-4 items-center gap-4 h-full text-xl gap-x-12 max-md:text-center"
+              class="text-gray-light grid grid-flow-col grid-rows-4 items-center gap-4 h-full text-xl max-md:text-base gap-x-12 max-md:text-center"
             >
               <li>Home</li>
               <li>Pricing</li>
