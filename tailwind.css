@@ -4,6 +4,13 @@
 @layer base {
     :root {
         --page-padding: 4rem;
+        --swiper-pagination-color: theme(colors.red-bright);
+        --swiper-pagination-bullet-size: .75rem;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-inactive-color: transparent;
+    }
+    .swiper-pagination > .swiper-pagination-bullet {
+        border: 1px solid theme(colors.red-bright);
     }
     span:has(svg) {
         display: inline-flex;
@@ -12,25 +19,25 @@
         object-fit: contain;
     }
     p {
-        @apply text-gray text-[1.2rem] leading-[2rem]
+        @apply text-gray text-[1.2rem] leading-[2rem] max-md:text-[1rem]
     }
     h1, h2, h3, h4, h5, h6 {
         @apply text-blue font-bold 
     }
     h1 {
-        @apply text-[3.6rem] leading-[1.2] tracking-tight
+        @apply text-[3.6rem] leading-[1.2] tracking-tight max-md:text-[2.625rem]
     }
     h2 {
-        @apply text-[2.625rem] leading-[3.25rem] -tracking-[0.0625rem]
+        @apply text-[2.625rem] leading-[3.25rem] -tracking-[0.0625rem] max-md:text-[2rem]
     }
     h3 {
-        @apply text-[1.25rem] leading-[1.625rem] -tracking-[0.0625rem]
+        @apply text-[1.25rem] leading-[1.625rem] -tracking-[0.0625rem] max-md:text-[1rem] max-md:-tracking-wide
     }
     header:not(#site-header) {
-        @apply flex flex-col max-w-lg gap-4
+        @apply flex flex-col max-w-lg gap-4 max-md:max-w-none max-md:text-center
     }
     header:not(#site-header) > p {
-        @apply max-w-[75%]
+        @apply max-w-[75%] max-md:max-w-none 
     }
 }
 @layer components {
@@ -53,10 +60,13 @@
         @apply flex items-center gap-4 before:content-[""] before:min-w-[4.5rem]
     }
     .counter > li > h3{
-        @apply [counter-increment:list] before:[content:"0"counter(list)] before:bg-red-bright before:py-2.5 before:inline-flex before:justify-center before:rounded-full before:font-bold before:text-gray-light
+        @apply [counter-increment:list] before:[content:"0"counter(list)] before:bg-red-bright before:py-2.5 before:inline-flex before:justify-center before:rounded-full before:font-bold before:text-gray-light max-md:bg-red-pale max-md:rounded-l-full max-md:-mr-8
+    }
+    .counter > li > p{
+        @apply before:content-[] before:hidden
     }
     .card {
-        @apply flex flex-col items-center text-center gap-6 p-4 bg-gray-light pt-0
+        @apply flex flex-col items-center gap-6 p-4 bg-gray-light pt-0 h-auto
     }
     .card > span:nth-child(1){
         @apply flex items-end h-[2.656rem] aspect-[2/1] mb-4
